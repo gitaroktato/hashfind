@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-const int STR_LEN = 5;
-const int MIN_CHAR_SEQ = 34;
-const int MAX_CHAR_SEQ = 39;
+const int STR_LEN = 255;
+const int MIN_CHAR_SEQ = 32;
+const int MAX_CHAR_SEQ = 126;
 
 int main(int argc, char **argv) {
 	char *str_start, *str_ptr;
@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
 	while (str_ptr < str_start + STR_LEN - 1) {
 		for (i = MIN_CHAR_SEQ; i <= MAX_CHAR_SEQ; i++) {
 			*str_ptr = i;
-			printf("%s\n", str_start);
+			printf("\r%s", str_start);
 			// TODO check hash.
 		}
 		// Step at end of string.
