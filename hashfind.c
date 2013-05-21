@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-const int STR_LEN = 3;
-const int MIN_CHAR_SEQ = 32;
-const int MAX_CHAR_SEQ = 38;
+const int STR_LEN = 5;
+const int MIN_CHAR_SEQ = 34;
+const int MAX_CHAR_SEQ = 39;
 
 int main(int argc, char **argv) {
 	char *str_start, *str_ptr;
@@ -25,14 +25,14 @@ int main(int argc, char **argv) {
 		}
 		if (str_ptr < str_start + STR_LEN - 1) {
 			if (*str_ptr == '\0') {
+				// insert termination char at end
+				*(str_ptr + 1) = '\0';
 				// insert first char
 				*str_ptr = MIN_CHAR_SEQ;
 			} else {
 				// increment last element
-				*str_ptr = *str_ptr + 1;
+				*str_ptr = (*str_ptr) + 1;
 			}
-			// insert termination char
-			*(str_ptr + 1) = '\0';
 			// Step to first element
 			str_ptr = str_start;
 		}
